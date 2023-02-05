@@ -14,6 +14,7 @@
 		F9BA11C2298FFA0E002E1238 /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BA11C1298FFA0E002E1238 /* ExpenseItem.swift */; };
 		F9BA11C4298FFAB3002E1238 /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BA11C3298FFAB3002E1238 /* Expenses.swift */; };
 		F9BA11C6298FFCC7002E1238 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BA11C5298FFCC7002E1238 /* AddView.swift */; };
+		F9BA11C8299004A0002E1238 /* dollarFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BA11C7299004A0002E1238 /* dollarFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		F9BA11C1298FFA0E002E1238 /* ExpenseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItem.swift; sourceTree = "<group>"; };
 		F9BA11C3298FFAB3002E1238 /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
 		F9BA11C5298FFCC7002E1238 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		F9BA11C7299004A0002E1238 /* dollarFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dollarFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				F9BA11C5298FFCC7002E1238 /* AddView.swift */,
 				F9BA11C3298FFAB3002E1238 /* Expenses.swift */,
 				F9BA11C1298FFA0E002E1238 /* ExpenseItem.swift */,
+				F9BA11C7299004A0002E1238 /* dollarFormatter.swift */,
 				F9BA11B6298FF10C002E1238 /* Assets.xcassets */,
 				F9BA11B8298FF10C002E1238 /* iExpense.entitlements */,
 				F9BA11B9298FF10C002E1238 /* Preview Content */,
@@ -148,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9BA11C8299004A0002E1238 /* dollarFormatter.swift in Sources */,
 				F9BA11C4298FFAB3002E1238 /* Expenses.swift in Sources */,
 				F9BA11B5298FF106002E1238 /* ContentView.swift in Sources */,
 				F9BA11C6298FFCC7002E1238 /* AddView.swift in Sources */,

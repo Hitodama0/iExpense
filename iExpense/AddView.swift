@@ -11,23 +11,24 @@ struct AddView: View {
     @State private var name = ""
     @State private var type = "Personal"
     @State private var amount = 0.0
-
+    
     let types = ["Business", "Personal"]
-
+    
     @ObservedObject var expenses: Expenses
     @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         NavigationView {
             Form {
                 TextField("Name", text: $name)
-
+                
                 Picker("Type", selection: $type) {
                     ForEach(types, id: \.self) {
                         Text($0)
                     }
                 }
-
-                TextField("Amount", value: $amount, format: .currency(code: "USD"))
+                
+                TextField("Amount", value: $amount, format: dollarFormatter)
                     .keyboardType(.decimalPad)
             }
             .navigationTitle("Add new expense")

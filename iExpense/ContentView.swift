@@ -7,6 +7,26 @@
 
 import SwiftUI
 
+struct Title: ViewModifier {
+    var num: Double
+    
+    func body(content: Content) -> some View {
+        if num < 10 {
+            return content.foregroundColor(.green)
+        }
+        else if num <= 100{
+            return content.foregroundColor(.yellow)
+        }
+        else if num > 100 {
+            return content.foregroundColor(.red)
+        }
+        else {
+            return content.foregroundColor(.black)
+        }
+    }
+}
+
+
 
 struct ContentView: View {
     @StateObject var expenses = Expenses()
@@ -22,7 +42,8 @@ struct ContentView: View {
                             Text(item.type)
                         }
                         Spacer()
-                        Text(item.amount, format: .currency(code: "USD"))
+                        Text(item.amount, format: dollarFormatter)
+                            .modifier(Title(num: item.amount))
                     }
                 }
                 .onDelete(perform: removeItems)

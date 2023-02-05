@@ -22,7 +22,7 @@ class Expenses: ObservableObject {
                 return
             }
         }
-
+        
         items = []
     }
 }
