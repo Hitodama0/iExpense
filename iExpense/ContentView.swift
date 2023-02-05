@@ -31,22 +31,60 @@ struct Title: ViewModifier {
 struct ContentView: View {
     @StateObject var expenses = Expenses()
     @State private var showingAddExpense = false
+    
+    var personalExpenses: [ExpenseItem] {
+        var returnArray = [ExpenseItem]()
+        for item in expenses.items{
+            if item.type == "Personal"{
+                returnArray.append(item)
+            }
+        }
+        return returnArray
+    }
+    
+    var businessExpenses: [ExpenseItem] {
+        var returnArray = [ExpenseItem]()
+        for item in expenses.items{
+            if item.type == "Business"{
+                returnArray.append(item)
+            }
+        }
+        return returnArray
+    }
+    
     var body: some View {
         NavigationView {
             List {
-                ForEach(expenses.items) { item in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(item.name)
-                                .font(.headline)
-                            Text(item.type)
+                Section{
+                    ForEach(personalExpenses, id: \.id) { item in
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(item.name)
+                                    .font(.headline)
+                                Text(item.type)
+                            }
+                            Spacer()
+                            Text(item.amount, format: dollarFormatter)
+                                .modifier(Title(num: item.amount))
                         }
-                        Spacer()
-                        Text(item.amount, format: dollarFormatter)
-                            .modifier(Title(num: item.amount))
                     }
+                    .onDelete(perform: removeItems)
                 }
-                .onDelete(perform: removeItems)
+                Section{
+                    ForEach(businessExpenses, id: \.id) { item in
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(item.name)
+                                    .font(.headline)
+                                Text(item.type)
+                            }
+                            Spacer()
+                            Text(item.amount, format: dollarFormatter)
+                                .modifier(Title(num: item.amount))
+                        }
+                    }
+                    .onDelete(perform: removeItems)
+                }
             }
             .toolbar {
                 Button {
