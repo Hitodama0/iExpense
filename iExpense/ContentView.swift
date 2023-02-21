@@ -67,6 +67,8 @@ struct ContentView: View {
                             Text(item.amount, format: dollarFormatter)
                                 .modifier(Title(num: item.amount))
                         }
+                        .accessibilityLabel("\(item.name), \(item.amount)")
+                        .accessibilityHint(item.type)
                     }
                     .onDelete(perform: removeItems)
                 }
